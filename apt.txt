@@ -1,3 +1,4 @@
 git make curl rsync
 code meld clang-format doxygen
 g++ cmake flex bison libreadline-dev
+pharo9-ui
