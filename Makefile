@@ -33,12 +33,26 @@ bin/$(MODULE): $(D) $(J) Makefile
 
 # doc
 .PHONY: doc
-doc: doc/yazyk_programmirovaniya_d.pdf doc/Programming_in_D.pdf
+doc: doc/yazyk_programmirovaniya_d.pdf doc/Programming_in_D.pdf \
+	doc/learningoop-wip.pdf doc/PharoWithStyle.pdf \
+	doc/SpecBooklet.pdf doc/smacc.pdf doc/AMiniScheme-wip.pdf
 
 doc/yazyk_programmirovaniya_d.pdf:
 	$(CURL) $@ https://www.k0d.cc/storage/books/D/yazyk_programmirovaniya_d.pdf
 doc/Programming_in_D.pdf:
 	$(CURL) $@ http://ddili.org/ders/d.en/Programming_in_D.pdf
+
+doc/learningoop-wip.pdf:
+	$(CURL) $@ https://github.com/SquareBracketAssociates/LearningOOPWithPharo/releases/download/v1.0/learningoop-wip.pdf
+doc/PharoWithStyle.pdf:
+	$(CURL) $@ https://github.com/SquareBracketAssociates/Booklet-PharoWithStyle/releases/download/latest/PharoWithStyle.pdf
+doc/SpecBooklet.pdf:
+	$(CURL) $@ https://ci.inria.fr/pharo-contribution/view/Books/job/BuildingUIWithSpec/lastSuccessfulBuild/artifact/book-result/SpecBooklet.pdf
+doc/smacc.pdf:
+	$(CURL) $@ https://github.com/SquareBracketAssociates/Booklet-Smacc/releases/download/continuous/smacc.pdf
+doc/AMiniScheme-wip.pdf:
+	$(CURL) $@ https://github.com/SquareBracketAssociates/Booklet-AMiniSchemeInPharo/releases/download/continuous/AMiniScheme-wip.pdf
+
 
 # install
 .PHONY: install update gz
