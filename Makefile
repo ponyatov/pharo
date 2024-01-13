@@ -77,6 +77,7 @@ $(GZ)/pharo-vm-Linux-x86_64-stable.zip:
 
 pharo/pharo.version: $(GZ)/pharo64_image.zip
 	unzip $< -d pharo && touch $@
+	git checkout pharo/Pharo11*
 
 $(GZ)/pharo64_image.zip:
 	$(CURL) $@ https://files.pharo.org/get-files/110/pharo64.zip
