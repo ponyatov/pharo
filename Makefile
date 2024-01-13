@@ -21,6 +21,10 @@ D += $(wildcard src/*.d*)
 .PHONY: all
 all: $(D)
 	$(RUN)
+
+.PHONY: pharo
+pharo: pharo/pharo
+	$^ `ls pharo/*.image`
 	
 # format
 format: tmp/format_d
