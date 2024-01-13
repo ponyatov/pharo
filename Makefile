@@ -31,11 +31,6 @@ tmp/format_d: $(D)
 bin/$(MODULE): $(D) $(J) Makefile
 	$(BLD)
 
-# # # install
-# # DEBIAN_VER  = $(shell lsb_release -rs)
-# # DEBIAN_NAME = $(shell lsb_release -cs)
-# # DEBIAN      = Debian_$(DEBIAN_VER)
-
 # doc
 .PHONY: doc
 doc: doc/yazyk_programmirovaniya_d.pdf doc/Programming_in_D.pdf
@@ -45,26 +40,20 @@ doc/yazyk_programmirovaniya_d.pdf:
 doc/Programming_in_D.pdf:
 	$(CURL) $@ http://ddili.org/ders/d.en/Programming_in_D.pdf
 
-# APT_FILES  += /etc/apt/sources.list.d/pharo.list
-# # APT_FILES  += /etc/apt/trusted.gpg.d/pharo.gpg
-
 # install
 .PHONY: install update gz
-install: doc gz $(APT_FILES)
+install: doc gz
 	$(MAKE) update
+	dub fetch dfmt
 update:
 	sudo apt update
-	sudo apt install -yu `cat apt.*`
+	sudo apt install -yu `cat apt.txt`
 gz: \
-	$(GZ)/pharo-vm-Linux-x86_64-stable.zip
+	$(GZ)/pharo-vm-Linux-x86_64-stable.zip \
+	$(GZ)/pharo64_image.zip
 
 $(GZ)/pharo-vm-Linux-x86_64-stable.zip:
 	$(CURL) $@ http://files.pharo.org/get-files/110/pharo-vm-Linux-x86_64-stable.zip
 
-# # /etc/apt/sources.list.d/pharo.list:
-# # 	echo 'deb $(REPO):/languages:/pharo:/latest/$(DEBIAN)/ /' | sudo tee /etc/apt/sources.list.d/pharo.list
-
-# # /etc/apt/trusted.gpg.d/pharo.gpg:
-# # 	curl -fsSL $(REPO):languages:pharo:latest/$(DEBIAN)/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/pharo.gpg > /dev/null
-
-http://files.pharo.org/get-files/110/pharo-vm-Linux-x86_64-stable.zip
+$(GZ)/pharo64_image.zip:
+	$(CURL) $@ https://files.pharo.org/get-files/110/pharo64.zip
