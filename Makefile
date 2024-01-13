@@ -63,11 +63,16 @@ update:
 	sudo apt update
 	sudo apt install -yu `cat apt.txt`
 gz: \
-	$(GZ)/pharo-vm-Linux-x86_64-stable.zip \
-	$(GZ)/pharo64_image.zip
+	pharo/pharo pharo/pharo.version
+
+pharo/pharo: $(GZ)/pharo-vm-Linux-x86_64-stable.zip
+	unzip $< -d pharo && touch $@
 
 $(GZ)/pharo-vm-Linux-x86_64-stable.zip:
 	$(CURL) $@ http://files.pharo.org/get-files/110/pharo-vm-Linux-x86_64-stable.zip
+
+pharo/pharo.version: $(GZ)/pharo64_image.zip
+	unzip $< -d pharo && touch $@
 
 $(GZ)/pharo64_image.zip:
 	$(CURL) $@ https://files.pharo.org/get-files/110/pharo64.zip
