@@ -38,7 +38,7 @@ bin/$(MODULE): $(D) $(J) Makefile
 # doc
 .PHONY: doc
 doc: doc/yazyk_programmirovaniya_d.pdf doc/Programming_in_D.pdf \
-	doc/learningoop-wip.pdf doc/PharoWithStyle.pdf \
+	doc/learningOOP-wip.pdf doc/PharoWithStyle.pdf \
 	doc/SpecBooklet.pdf doc/smacc.pdf doc/AMiniScheme-wip.pdf
 
 doc/yazyk_programmirovaniya_d.pdf:
@@ -46,7 +46,7 @@ doc/yazyk_programmirovaniya_d.pdf:
 doc/Programming_in_D.pdf:
 	$(CURL) $@ http://ddili.org/ders/d.en/Programming_in_D.pdf
 
-doc/learningoop-wip.pdf:
+doc/learningOOP-wip.pdf:
 	$(CURL) $@ https://github.com/SquareBracketAssociates/LearningOOPWithPharo/releases/download/v1.0/learningoop-wip.pdf
 doc/PharoWithStyle.pdf:
 	$(CURL) $@ https://github.com/SquareBracketAssociates/Booklet-PharoWithStyle/releases/download/latest/PharoWithStyle.pdf
