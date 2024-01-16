@@ -1,11 +1,11 @@
 {
-	"commentStamp" : "DmitryPonyatov 1/16/2024 19:45",
-	"super" : "MInteger",
+	"commentStamp" : "DmitryPonyatov 1/16/2024 19:48",
+	"super" : "MMeta",
 	"category" : "MetaL",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "MHex",
+	"name" : "MModule",
 	"type" : "normal"
 }

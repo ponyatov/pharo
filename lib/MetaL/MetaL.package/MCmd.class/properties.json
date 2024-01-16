@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "DmitryPonyatov 1/16/2024 19:40",
-	"super" : "MMeta",
+	"super" : "MActive",
 	"category" : "MetaL",
 	"classinstvars" : [ ],
 	"pools" : [ ],
