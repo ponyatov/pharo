@@ -11,12 +11,14 @@ class Number : Magnitude {
 }
 
 class Float : Number, protocol.converting {
+
     float value;
+
     this(float V) {
         value = V;
     }
 
-    Float asFloat() {
+    @disable Float asFloat() {
         return this;
     }
 }
