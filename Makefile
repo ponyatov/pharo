@@ -20,6 +20,7 @@ BLD  = $(DUB) build --compiler=$(DC)
 
 # src
 D += $(wildcard src/*.d*)
+D += $(wildcard src/ST/*.d*)
 
 # all
 .PHONY: pharo
@@ -91,3 +92,8 @@ pharo/pharo.version: $(GZ)/pharo64_image.zip
 $(GZ)/pharo64_image.zip:
 	$(CURL) $@ https://files.pharo.org/get-files/110/pharo64.zip
 
+# merge
+
+.PHONY: image
+image:
+	git update-index --assume-unchanged pharo/Pharo11*
