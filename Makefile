@@ -2,7 +2,7 @@
 MODULE  = $(notdir $(CURDIR))
 
 # version
-D_VER = 2.106.1-0
+D_VER = 2.106.1
 
 # dir
 CWD = $(CURDIR)
@@ -22,14 +22,14 @@ BLD  = $(DUB) build --compiler=$(DC)
 D += $(wildcard src/*.d*)
 
 # all
-.PHONY: all
-all: $(D)
-	$(RUN)
-
 .PHONY: pharo
 pharo: pharo/pharo
 	$^ `ls pharo/*.image`
 	
+.PHONY: all
+all: $(D)
+	$(RUN)
+
 # format
 format: tmp/format_d
 tmp/format_d: $(D)
@@ -61,7 +61,6 @@ doc/smacc.pdf:
 doc/AMiniScheme-wip.pdf:
 	$(CURL) $@ https://github.com/SquareBracketAssociates/Booklet-AMiniSchemeInPharo/releases/download/continuous/AMiniScheme-wip.pdf
 
-
 # install
 .PHONY: install update gz
 install: doc gz
@@ -77,7 +76,7 @@ $(DC) $(DUB): $(HOME)/distr/SDK/dmd_$(D_VER)_amd64.deb
 	sudo dpkg -i $< && sudo touch $@
 
 $(HOME)/distr/SDK/dmd_$(D_VER)_amd64.deb:
-	$(CURL) $@ https://downloads.dlang.org/releases/2.x/2.106.1/dmd_2.106.1-0_amd64.deb
+	$(CURL) $@ https://downloads.dlang.org/releases/2.x/$(D_VER)/dmd_$(D_VER)-0_amd64.deb
 
 pharo/pharo: $(GZ)/pharo-vm-Linux-x86_64-stable.zip
 	unzip $< -d pharo && touch $@
