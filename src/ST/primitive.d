@@ -1,5 +1,6 @@
 module ST.primitive;
 
 enum Primitive {
-    asFloat = 40
+    asFloat = 40,
+    primitiveFailed
 }
