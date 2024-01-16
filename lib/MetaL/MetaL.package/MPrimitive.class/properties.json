@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "MObject",
+	"category" : "MetaL",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "MPrimitive",
+	"type" : "normal"
+}

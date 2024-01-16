@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "MNumber",
+	"category" : "MetaL",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "MFloat",
+	"type" : "normal"
+}

@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "DmitryPonyatov 1/16/2024 19:38",
+	"super" : "MIO",
+	"category" : "MetaL",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "MFS",
+	"type" : "normal"
+}

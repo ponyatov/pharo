@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "MPrimitive",
+	"category" : "MetaL",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "MSymbol",
+	"type" : "normal"
+}

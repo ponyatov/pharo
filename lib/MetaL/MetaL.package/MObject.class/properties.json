@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "DmitryPonyatov 1/16/2024 19:37",
+	"super" : "Object",
+	"category" : "MetaL",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"value",
+		"slot",
+		"nest"
+	],
+	"name" : "MObject",
+	"type" : "normal"
+}

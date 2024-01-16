@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "MInteger",
+	"category" : "MetaL",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "MBin",
+	"type" : "normal"
+}
