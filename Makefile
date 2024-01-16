@@ -1,6 +1,9 @@
 # var
 MODULE  = $(notdir $(CURDIR))
 
+# version
+D_VER = 2.106.1-0
+
 # dir
 CWD = $(CURDIR)
 BIN = $(CWD)/bin
@@ -10,9 +13,10 @@ GZ  = $(HOME)/gz
 
 # tool
 CURL = curl -L -o
-DC   = dmd
-RUN  = dub run   --compiler=$(DC)
-BLD  = dub build --compiler=$(DC)
+DC   = /usr/bin/dmd
+DUB  = /usr/bin/dub
+RUN  = $(DUB) run   --compiler=$(DC)
+BLD  = $(DUB) build --compiler=$(DC)
 
 # src
 D += $(wildcard src/*.d*)
@@ -66,8 +70,14 @@ install: doc gz
 update:
 	sudo apt update
 	sudo apt install -yu `cat apt.txt`
-gz: \
+gz: $(DC) $(DUB) \
 	pharo/pharo pharo/pharo.version
+
+$(DC) $(DUB): $(HOME)/distr/SDK/dmd_$(D_VER)_amd64.deb
+	sudo dpkg -i $< && sudo touch $@
+
+$(HOME)/distr/SDK/dmd_$(D_VER)_amd64.deb:
+	$(CURL) $@ https://downloads.dlang.org/releases/2.x/2.106.1/dmd_2.106.1-0_amd64.deb
 
 pharo/pharo: $(GZ)/pharo-vm-Linux-x86_64-stable.zip
 	unzip $< -d pharo && touch $@
@@ -81,3 +91,4 @@ pharo/pharo.version: $(GZ)/pharo64_image.zip
 
 $(GZ)/pharo64_image.zip:
 	$(CURL) $@ https://files.pharo.org/get-files/110/pharo64.zip
+
