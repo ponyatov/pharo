@@ -71,7 +71,14 @@ update:
 	sudo apt update
 	sudo apt install -yu `cat apt.txt`
 gz: $(DC) $(DUB) \
-	pharo/pharo pharo/pharo.version
+	pharo/pharo pharo/pharo.version \
+	ref
+
+.PHONY: ref
+ref: ref/LWDR/README.md
+
+ref/LWDR/README.md:
+	git clone -o gh --depth 1 https://github.com/hmmdyl/LWDR.git ref/LWDR/README.md
 
 $(DC) $(DUB): $(HOME)/distr/SDK/dmd_$(D_VER)_amd64.deb
 	sudo dpkg -i $< && sudo touch $@
