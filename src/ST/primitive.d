@@ -28,8 +28,6 @@ enum PrimNumber {
 }
 
 enum Primitive {
-    MaxPrimitiveIndex = 576,
-    MaxQuickPrimitiveIndex = 519,
 
     Fail = 0,
     Add = 1,
@@ -309,14 +307,17 @@ enum Primitive {
 
     Fail264 = 264,
     LoadInstVar = 519,
+    MaxQuickPrimitiveIndex = 519,
 
     Fail520 = 520,
     Fail521 = 521,
     Fail529 = 529,
     Fail530 = 530,
     Fail539 = 539,
-
     Fail540 = 540,
+
+    /// @name SmallFloat
+
     SmallFloatAdd = 541,
     SmallFloatSubtract = 542,
     SmallFloatLessThan = 543,
@@ -350,11 +351,12 @@ enum Primitive {
 
     HighBit = 575,
 
+    MaxPrimitiveIndex = 576,
+
     Fail576 = 576,
     Fail577 = 577,
     SuspendBackingUpV2 = 578,
     Fail579 = 579,
 
-    asFloat = 40,
     Failed
 }
