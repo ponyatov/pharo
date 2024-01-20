@@ -23,6 +23,9 @@
     // D
     "d.overrideDfmtEditorconfig": true,
     "dfmt.braceStyle": "otbs",
+    "dscanner.ignoredKeys": [
+        "dscanner.style.phobos_naming_convention"
+    ],
 
     // C++
     "[c,cpp]": {
